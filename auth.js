@@ -193,7 +193,7 @@ module.exports = function(config) {
           return;
         }
 
-        auth.currentUser = user;
+        auth.currentUser = auth.createAuthFromData(user);
         res.locals = res.locals || {};
         res.locals.auth = auth;
         if (config.scopes) {
